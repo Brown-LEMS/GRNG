@@ -1,11 +1,11 @@
-# HierarchicalRNG
+# Generalized Relative Neighborhood Graph (GRNG)
 
 ### Overview:
-The HierarchicalRNG (hRNG) is an incremental, hierarchical approach to constructing the Relative Neighborhood Graph (RNG).
+The Generalized RNG (GRNG) is an incremental, hierarchical approach to constructing the Relative Neighborhood Graph (RNG).
 
 Each layer of the hierarchy contains a graph that is a generalization of the RNG, where each node is a "pivot" in that layer with an associated radius. The bottom, RNG layer includes all exemplar has a radius of 0. 
 - The radius of a pivot determines the size of its pivot domain (hypersphere around the pivot), and pivots in lower layers within its domain are considered children of that pivot. 
-- The hRNG takes an incremental approach to building the index. 
+- This uses an incremental approach to building the index. 
 
 ## Requirements and Dependencies
 - Tested on gcc 8.3.0 and CMake 3.15
@@ -15,13 +15,10 @@ Each layer of the hierarchy contains a graph that is a generalization of the RNG
     - module load boost/1.68
 - Uses NLOPT for optimization
 
-
 ## Build and Run 
 cmake -S . -B build/
 cd build ; make install
 cd bin ; ./main
-
-
 
 ## Unit Testing
 Boost is used for unit testing. 
